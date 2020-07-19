@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>confirm</title>
+</head>
+<body>
+  <!-- th:replaceを使用して、 ヘッダー用のフラグメントを読込みます -->
+  <div th:replace="common :: header_fragment"></div>
+	<h1>確認用ページ</h1>
+	<form th:action="@{/addcreate}" th:object="${addRequest}" method="post">
+		  <div>
+		      <label for="name">ユーザー名</label><br />
+		      <p th:text="*{name}">name</p>
+		  </div>
+		  <div>
+		      <label for="team">所属チーム名（無所属の場合は”所属なし”）</label><br />
+		      <p th:text="*{team}">team</p>
+		  </div>
+	  	  <div>
+		      <label for="position">守れるポジション（複数可）</label><br />
+		      <p th:text="*{position}">venue</p>
+		  </div>
+
+		  <div>
+	          <input type="hidden" name="name" th:value="*{name}" />
+	          <input type="hidden" name="team" th:value="*{team}" />
+	          <input type="hidden" name="position" th:value="*{position}" />
+
+        	  <input type="submit" value="送信" />
+   		  </div>
+	 </form>
+</body>
+</html>
