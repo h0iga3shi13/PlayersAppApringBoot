@@ -28,16 +28,16 @@ public class BBS {
 	private Long id;
 
 	/*
-	 * チームid (ユーザー登録時に紐付ける)
-	 */
-	@Column(name = "teamid")
-	private String team;
-
-	/*
 	 * 募集者
 	 */
 	@Column(name = "name")
 	private String name;
+
+	/*
+	 * チームid (ユーザー登録時に紐付ける)
+	 */
+	@Column(name = "teamid")
+	private String team;
 
 	/*
 	 * 開催日

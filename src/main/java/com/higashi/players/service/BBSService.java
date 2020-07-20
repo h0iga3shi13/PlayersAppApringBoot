@@ -49,6 +49,7 @@ public class BBSService {
 
 		BBS bbs = new BBS();
 		bbs.setName(formRequest.getName());
+		bbs.setTeam(formRequest.getTeam());
 		bbs.setEvent(formRequest.getEvent().atTime(0, 0, 0));
 		bbs.setDeadline(formRequest.getDeadline().atTime(0, 0, 0));
 		bbs.setArea(formRequest.getArea());
