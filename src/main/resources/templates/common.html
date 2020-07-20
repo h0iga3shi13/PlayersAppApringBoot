@@ -1,4 +1,6 @@
-<header xmlns:th="http://www.thymeleaf.org" th:fragment="header_fragment">
+<header xmlns:th="http://www.thymeleaf.org"
+	th:fragment="header_fragment"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 	<h1>Players</h1>
 	<table>
 		<tr>
@@ -10,6 +12,7 @@
 			<td><a th:href="@{/login}">Login</a></td>
 		</tr>
 	</table>
+	Logged user: <span sec:authentication="name"></span>
 	<form id="logout" th:action="@{/logout}" method="post">
 		<button type="submit">logout</button>
 	</form>
