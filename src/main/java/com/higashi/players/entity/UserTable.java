@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -25,9 +26,11 @@ public class UserTable implements UserDetails {
 	private Integer userId;
 
 	@Column(name = "Email")
+	@NotEmpty
 	private String email;
 
 	@Column(name = "PASSWORD")
+	@NotEmpty
 	private String password;
 
 	@Override
