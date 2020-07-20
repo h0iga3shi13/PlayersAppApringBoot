@@ -31,6 +31,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		http.formLogin()
 				.defaultSuccessUrl("/")
 				.usernameParameter("email").passwordParameter("password");
+
+		http.logout().logoutSuccessUrl("/login").permitAll();
 	}
 
 	@Override
