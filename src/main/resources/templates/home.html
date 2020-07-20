@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
 <meta charset="UTF-8">
-<title>BBS</title>
+<title>home</title>
+<link href="/css/addlist.css" rel="stylesheet"></link>
 </head>
 <body>
   <!-- th:replaceを使用して、 ヘッダー用のフラグメントを読込みます -->
@@ -11,15 +13,16 @@
 	<table>
 		<thead>
 			<tr>
-				<td><a th:href="@{/bbs}">タイトル</a></td>
-				<td>募集者</td>
-				<td>開催日</td>
-				<td>募集エリア</td>
-				<td>種類</td>
+				<th>タイトル</th>
+				<th>募集者</th>
+				<th>開催日</th>
+				<th>募集エリア</th>
+				<th>種類</th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr th:each="bbs : ${bbslist}" th:object="${bbs}">
+				<td th:text="*{text}"></td>
 				<td th:text="*{name}"></td>
 				<td th:text="*{event}"></td>
 				<td th:text="*{area}"></td>
