@@ -48,6 +48,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
+    <!-- Thymleaf Spring Securityライブラリ -->
+        <dependency>
+            <groupId>org.thymeleaf.extras</groupId>
+            <artifactId>thymeleaf-extras-springsecurity5</artifactId>
+        </dependency>
 	<!-- プロジェクト立ち上げ時に設定した依存関係 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
