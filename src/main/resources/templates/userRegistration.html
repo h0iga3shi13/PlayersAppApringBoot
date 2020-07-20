@@ -8,9 +8,7 @@
 <body>
   <!-- th:replaceを使用して、 ヘッダー用のフラグメントを読込みます -->
   <div th:replace="common :: header_fragment"></div>
-	<h1>Login</h1>
 	<div>
-
     <form th:action="@{/regist}" action="/regist" th:object="${registForm}" method="post">
 
         <h1>ユーザー登録</h1>
