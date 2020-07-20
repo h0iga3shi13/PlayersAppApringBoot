@@ -16,8 +16,7 @@ public class JpaUserDetailsServiceImpl implements UserDetailsService {
 	private UserTableRepository userTableRepository;
 
 	@Override
-	public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-
+	public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException { //UserDetailsServiceインターフェースを実装することで、任意の保存場所から認証ユーザー情報を取得することができる
 		UserTable table = userTableRepository.findByEmail(email);
 		return table;
 	}
