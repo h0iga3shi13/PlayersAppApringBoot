@@ -40,7 +40,7 @@ public class BBSController {
 	public String create(BBSForm formRequest) { //formの中身をdbに送る
 		// BBS情報の登録
 		bbsService.create(formRequest);
-		return "redirect:/"; // URLの再読み込み
+		return "redirect:/bbs"; // URLの再読み込み
 	}
 
 	/*
