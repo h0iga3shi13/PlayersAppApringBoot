@@ -12,7 +12,7 @@
 			<td><a th:href="@{/login}">Login</a></td>
 		</tr>
 	</table>
-	Logged user: <span sec:authentication="name"></span>
+	ログインユーザー :  <span sec:authentication="name"></span>
 	<form id="logout" th:action="@{/logout}" method="post">
 		<button type="submit">logout</button>
 	</form>
