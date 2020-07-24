@@ -17,12 +17,6 @@ public class CommonController {
 	@Autowired
 	BBSService bbsService;
 
-	// HOME画面
-	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Model model) {
-		return "home.html";
-	}
-
 	/*
 	 * BBS画面
 	 * BBS 一覧画面を表示
@@ -57,9 +51,9 @@ public class CommonController {
 	}
 
 	// confirm画面
-	@RequestMapping(value = "/confirm", method = RequestMethod.GET)
-	public String confirm(Model model) {
-		return "confirm";
-	}
+	//	@RequestMapping(value = "/confirm", method = RequestMethod.GET)
+	//	public String confirm(Model model) {
+	//		return "confirm";
+	//	}
 
 }
