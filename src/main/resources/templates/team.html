@@ -3,10 +3,23 @@
 <head xmlns:th="http://www.thymeleaf.org">
 <meta charset="UTF-8">
 <title>チーム一覧</title>
+<link href="/css/addlist.css" rel="stylesheet"></link>
 </head>
 <body>
   <!-- th:replaceを使用して、 ヘッダー用のフラグメントを読込みます -->
   <div th:replace="common :: header_fragment"></div>
 	<h1>Team一覧</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>チーム名</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="bbs : ${bbslist}" th:object="${bbs}">
+				<td th:text="*{team}"></td>
+			</tr>
+		</tbody>
+	</table>
 </body>
 </html>
