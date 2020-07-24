@@ -39,10 +39,10 @@ public class CommonController {
 	//	}
 
 	// team画面
-	@RequestMapping(value = "/team", method = RequestMethod.GET)
-	public String team(Model model) {
-		return "team";
-	}
+	//	@RequestMapping(value = "/team", method = RequestMethod.GET)
+	//	public String team(Model model) {
+	//		return "team";
+	//	}
 
 	// login画面
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
