@@ -45,7 +45,6 @@ public class BBSService {
 	 */
 
 	private BBS createBBS(BBSForm formRequest) {
-		//		Date now = new Date();
 
 		BBS bbs = new BBS();
 		bbs.setName(formRequest.getName());

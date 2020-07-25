@@ -4,8 +4,6 @@ import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -24,7 +22,6 @@ public class Add {
 	 * add ID
 	 */
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	private Long id;
 
@@ -35,7 +32,7 @@ public class Add {
 	private String name;
 
 	/*
-	 * 所属チーム名(bbs情報と紐付けする)
+	 * 所属チーム名
 	 */
 	@Column(name = "teamid")
 	private String team;

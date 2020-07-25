@@ -21,11 +21,6 @@ public class AddController {
 	@Autowired
 	AddService addService;
 
-	//	@RequestMapping(value = "/add", method = RequestMethod.GET)
-	//	public String add(Model model) {
-	//		return "add";
-	//	}
-
 	/**
 	 * ユーザー情報一覧画面を表示
 	 * @param model Model
@@ -44,7 +39,7 @@ public class AddController {
 	//	 * @return form画面
 	//	 */
 	@RequestMapping(value = "/add", method = RequestMethod.GET)
-	public String displayform(@ModelAttribute("addRequest") AddForm addRequest, Model model) {
+	public String displayform(@ModelAttribute("addRequest") AddForm addRequest) {
 		return "add";
 	}
 
@@ -66,7 +61,6 @@ public class AddController {
 			return "add";
 		}
 
-		//		model.addAttribute("addRequest", addRequest);
 		return "addConfirm";
 	}
 

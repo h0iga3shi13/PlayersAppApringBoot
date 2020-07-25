@@ -14,10 +14,8 @@
 		</tr>
 	</table>
 	<h5>ログイン中</h5>
-	  <!-- <p th:text="${#authentication.principal.email} ?: 'ゲストユーザー'"></p> -->
-	  <!-- <p th:text="${email}"> -->
 	  <p th:text="${T(com.higashi.players.util.LoginState).loginEmail()}">
-	<form id="logout" th:action="@{/logout}" method="post">
-		<button type="submit">logout</button>
-	</form>
+		<form id="logout" th:action="@{/logout}" method="post">
+			<button type="submit">logout</button>
+		</form>
 </html>

@@ -2,7 +2,6 @@ package com.higashi.players.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -26,8 +25,7 @@ public class BBSController {
 	 * @return form画面
 	 */
 	@RequestMapping(value = "/bbs/form", method = RequestMethod.GET)
-	public String displayform(@ModelAttribute("formRequest") BBSForm formRequest, Model model) {
-		//		model.addAttribute("formRequest", new BBSForm());
+	public String displayform(@ModelAttribute("formRequest") BBSForm formRequest) {
 		return "bbsForm";
 	}
 
@@ -50,21 +48,9 @@ public class BBSController {
 	public String confirm(@Validated @ModelAttribute("formRequest") BBSForm formRequest,
 			BindingResult result) {
 		if (result.hasErrors()) {
-			//			model.addAttribute("formRequest", formRequest);
 			return "bbsForm";
 		}
-		//		model.addAttribute("formRequest", formRequest);
-		//		System.out.println("なまえは" + formRequest.getName());
 		return "bbsConfirm";
 	}
-
-	//	@PostMapping("/bbs/confirm")
-	//	public String confirm(@Valid BBSForm formRequest,
-	//			BindingResult result) {
-	//		if (result.hasErrors()) {
-	//			return "bbsForm";
-	//		}
-	//		return "bbsConfirm";
-	//	}
 
 }

@@ -23,6 +23,11 @@ public class HomeController {
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String index(Model model) {
+
+		/*
+		 * ログインユーザーの情報を取得する
+		 * ログインしていないユーザーには"ゲストユーザー"を返す
+		 */
 		List<BBS> homelist = bbsRepository.findAll();
 		model.addAttribute("bbslist", homelist);
 		return "home";
