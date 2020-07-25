@@ -1,8 +1,8 @@
-<header xmlns:th="http://www.thymeleaf.org"
+<html xmlns:th="http://www.thymeleaf.org"
 	th:fragment="header_fragment"
 	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
-	<h1>Players</h1>
-	<table>
+    <h1>Players</h1>
+ 	<table>
 		<tr>
 			<td><a th:href="@{/}">Home</a></td>
 			<td><a th:href="@{/bbs}">BBS</a></td>
@@ -18,4 +18,4 @@
 	<form id="logout" th:action="@{/logout}" method="post">
 		<button type="submit">logout</button>
 	</form>
-</header>
+</html>
