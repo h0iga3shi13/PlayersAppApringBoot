@@ -21,7 +21,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
-				.antMatchers("/regist").permitAll() //Basic認証OFF
+				.antMatchers("/").permitAll() //Basic認証OFF
+				.antMatchers("/regist").permitAll()
 				// .mvcMatchers("/").permitAll()
 				.anyRequest().authenticated()
 				.and()
@@ -37,7 +38,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 	@Override
 	public void configure(WebSecurity web) throws Exception {
-		web.ignoring().antMatchers("/css/**");
+		web.ignoring().antMatchers(
+				"/images/**",
+				"/css/**",
+				"/bootstrap/**");
 	}
 
 	//入力されたパスワードをBCrypt方式でハッシュ化するメソッド
