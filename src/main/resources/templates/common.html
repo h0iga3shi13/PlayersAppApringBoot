@@ -14,7 +14,7 @@
 		</tr>
 	</table>
 	<h5>ログイン中</h5>
-	  <p th:text="${#authentication.principal.username}"></p>
+	  <p th:text="${#authentication.principal.email}"></p>
 	<form id="logout" th:action="@{/logout}" method="post">
 		<button type="submit">logout</button>
 	</form>
