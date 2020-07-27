@@ -1,15 +1,25 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-<meta charset="UTF-8">
-<title>home</title>
-<link href="/css/addlist.css" rel="stylesheet"></link>
-</head>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+  <head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>home</title>
+	<link href="/css/addlist.css" rel="stylesheet"></link>
+	<!-- BootstrapのCSS読み込み -->
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery読み込み -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- BootstrapのJS読み込み -->
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+  </head>
 <body>
   <!-- th:replaceを使用して、 ヘッダー用のフラグメントを読込みます -->
   <div th:replace="common :: header_fragment"></div>
+  <div class="container">
 	<h1>HOME</h1>
-	<table>
+	<table class="table table-striped">
 		<thead>
 			<tr>
 				<th>タイトル</th>
@@ -29,5 +39,6 @@
 			</tr>
 		</tbody>
 	</table>
-  </body>
+  </div>
+</body>
 </html>
