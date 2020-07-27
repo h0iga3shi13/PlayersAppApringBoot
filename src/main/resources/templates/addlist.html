@@ -1,16 +1,26 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
   <head>
-    <title>ユーザー登録情報一覧</title>
-    <link href="/css/addlist.css" rel="stylesheet"></link>
-    <meta charset="utf-8" />
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Login</title>
+	<link href="/css/addlist.css" rel="stylesheet"></link>
+	<!-- BootstrapのCSS読み込み -->
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery読み込み -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- BootstrapのJS読み込み -->
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
   </head>
-  <body>
+<body>
   <!-- th:replaceを使用して、 ヘッダー用のフラグメントを読込みます -->
-  <div th:replace="common :: header_fragment"></div>
-  	<h1>ユーザー登録情報一覧</h1>
+	<div th:replace="common :: header_fragment"></div>
+ 	 <div class="container">
+     <h3>ユーザー登録情報一覧</h3>
   	<div><a th:href="@{/add}">プロフィール登録はこちら</a></div>
-	<table>
+	<table class="table table-striped">
 		<thead>
 			<tr>
 				<th>ID</th>
@@ -25,7 +35,7 @@
 		</thead>
 		<tbody>
 		    <tr th:each="user : ${userlist}" th:object="${user}">
-		        <td class="center" th:text="*{id}"></td>
+		        <td th:text="*{id}"></td>
 		        <td th:text="*{name}"></td>
 		        <td th:text="*{team}"></td>
 		        <td class="center" th:text="*{position}"></td>
@@ -42,5 +52,6 @@
 		    </tr>
 	    </tbody>
 	</table>
+  </div>
   </body>
 </html>
