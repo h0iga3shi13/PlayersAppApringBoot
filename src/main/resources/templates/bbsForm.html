@@ -6,6 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>form</title>
+	<!-- form.cssの読み込み -->
 	<link href="/css/form.css" rel="stylesheet"></link>
 	<!-- BootstrapのCSS読み込み -->
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -17,11 +18,11 @@
 <body>
   <!-- th:replaceを使用して、 ヘッダー用のフラグメントを読込みます -->
   <div th:replace="common :: header_fragment"></div>
-    <div>
 	    <form th:action="@{/bbs/confirm}" th:object="${formRequest}" method="post">
-	      <!-- UserName -->
-	      <div class="container">
+	    <div class="container">
 	      <h2>募集掲示板入力フォーム</h2>
+
+	      <!-- UserName -->
 	      <div class="form-group">
 	        <label for="inputName3" class="col-sm-2 control-label">UserName</label>
 	        <div class="col-sm-10">
@@ -38,6 +39,7 @@
               <p th:errors="*{team}" class="error-message"></p>
 	        </div>
 	      </div>
+
 	      <!-- Event -->
 	      <div class="form-group">
 	        <label for="inputEvent3" class="col-sm-2 control-label">Event</label>
@@ -46,6 +48,7 @@
               <p th:errors="*{event}" class="error-message"></p>
 	        </div>
 	      </div>
+
 	      <!-- deadline -->
 	      <div class="form-group">
 	        <label for="inputdeadline3" class="col-sm-2 control-label">Deadline</label>
@@ -54,6 +57,7 @@
               <p th:errors="*{deadline}" class="error-message"></p>
 	        </div>
 	      </div>
+
 	      <!-- area -->
 	      <div class="form-group">
 	        <label for="inputarea3" class="col-sm-2 control-label">Area</label>
@@ -62,6 +66,7 @@
               <p th:errors="*{area}" class="error-message"></p>
 	        </div>
 	      </div>
+
 	      <!-- venue -->
 	      <div class="form-group">
 	        <label for="inputvenue3" class="col-sm-2 control-label">Venue</label>
@@ -70,6 +75,7 @@
               <p th:errors="*{venue}" class="error-message"></p>
 	        </div>
 	      </div>
+
 	      <!-- venue -->
 	      <div class="form-group">
 	        <label for="inputcost3" class="col-sm-2 control-label">Cost</label>
@@ -78,6 +84,7 @@
               <p th:errors="*{cost}" class="error-message"></p>
 	        </div>
 	      </div>
+
 	      <!-- capacity -->
 	      <div class="form-group">
 	        <label for="inputcapacity3" class="col-sm-2 control-label">Capacity</label>
@@ -86,6 +93,7 @@
               <p th:errors="*{capacity}" class="error-message"></p>
 	        </div>
 	      </div>
+
 	      <!-- level -->
 	      <div class="form-group">
 	        <label for="inputlevel3" class="col-sm-2 control-label">Level</label>
@@ -94,6 +102,7 @@
               <p th:errors="*{level}" class="error-message"></p>
 	        </div>
 	      </div>
+
 	      <!-- type -->
 	      <div class="form-group">
 	        <label for="inputtype3" class="col-sm-2 control-label">Category</label>
@@ -104,23 +113,24 @@
 	      </div>
 
 	      <!-- text -->
-	     <div class="form-group">
+	      <div class="form-group">
 	        <div class="col-sm-10">
 			  <div class="cell_title">本文</div>
 			  <div class="cell_required"></div>
 			    <textarea name="contents" rows="3" cols="40" th:field="*{text}"></textarea>
 			    <p th:errors="*{text}" class="error-message"></p>
-	       </div>
-	     </div>
+	        </div>
+	      </div>
 
+          <!-- bottom -->
 	      <div class="form-group">
 	        <div class="col-sm-offset-2 col-sm-10">
 	        <div class="btn_area_center">
               <button type="submit" class="btn btn-outline-primary" value="確認ページへ">Confirm</button>
             </div>
+            </div>
           </div>
-          </div>
+        </div>
 	</form>
-	</div>
 </body>
 </html>
