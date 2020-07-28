@@ -27,7 +27,12 @@ table input {
     font-size: 12px;
     width: 10px;
     border-left: 0;
+
 }
+.error-message{
+    color: red;
+}
+
 .btn {
 	width: 100px;
     text-align: center;
