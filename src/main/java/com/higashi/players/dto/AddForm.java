@@ -30,7 +30,7 @@ public class AddForm implements Serializable {
 	/*
 	 * ポジション
 	 */
-	@NotBlank(message = "記入例 : 投手、捕手、遊撃手、外野手")
+	@NotBlank(message = "投手、捕手、一塁手、二塁手、三塁手、遊撃手、外野手")
 	private String position;
 
 }
