@@ -1,14 +1,26 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-<meta charset="UTF-8">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+  <head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>confirm</title>
-</head>
+	<!-- form.cssの読み込み -->
+	<link href="/css/form.css" rel="stylesheet"></link>
+	<!-- BootstrapのCSS読み込み -->
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery読み込み -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- BootstrapのJS読み込み -->
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+  </head>
 <body>
   <!-- th:replaceを使用して、 ヘッダー用のフラグメントを読込みます -->
   <div th:replace="common :: header_fragment"></div>
-	<h1>確認用ページ</h1>
 	<form th:action="@{/create}" th:object="${formRequest}" method="post">
+	<div class="container">
+	  <h1>確認用ページ</h1>
 		  <div>
 		    <label for="name">ユーザー名</label><br />
 		    <p th:text="*{name}">name</p>
@@ -67,11 +79,19 @@
 	        <input type="hidden" name="level" th:value="*{level}" />
 	        <input type="hidden" name="type" th:value="*{type}" />
 	        <input type="hidden" name="text" th:value="*{text}" />
-
-
-	        <input type="submit" value="送信" />
     </div>
 
+    	<!-- button -->
+		<div class="form-group">
+		  <div class="col-sm-offset-2 col-sm-10">
+		  <div class="btn_area_center">
+			<button type="submit" class="btn btn-success" name="save">登録</button>
+			<button type="submit" class="btn btn-warning" name="back">戻る</button>
+		  </div>
+		  </div>
+		</div>
+
+    </div>
 	</form>
 
 </body>
