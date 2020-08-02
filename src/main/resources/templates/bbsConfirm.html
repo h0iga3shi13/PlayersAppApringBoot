@@ -79,14 +79,14 @@
 	        <input type="hidden" name="level" th:value="*{level}" />
 	        <input type="hidden" name="type" th:value="*{type}" />
 	        <input type="hidden" name="text" th:value="*{text}" />
-    </div>
+   		</div>
 
     	<!-- button -->
 		<div class="form-group">
 		  <div class="col-sm-offset-2 col-sm-10">
 		  <div class="btn_area_center">
 			<button type="submit" class="btn btn-success" name="save">登録</button>
-			<button type="submit" class="btn btn-warning" name="back">戻る</button>
+			<button type="button" class="btn btn-warning" name="back" onclick="history.back()">戻る</button>
 		  </div>
 		  </div>
 		</div>
