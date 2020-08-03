@@ -7,4 +7,6 @@ import com.higashi.players.entity.UserTable;
 public interface UserTableRepository extends JpaRepository<UserTable, String> {
 
 	public UserTable findByEmail(String email);
+
+	public UserTable findByUserId(long userId);
 }
