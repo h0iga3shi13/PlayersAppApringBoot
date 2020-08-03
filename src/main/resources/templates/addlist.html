@@ -18,7 +18,7 @@
   <!-- th:replaceを使用して、 ヘッダー用のフラグメントを読込みます -->
 	<div th:replace="common :: header_fragment"></div>
  	<div class="container">
-       <h2>ユーザー登録情報一覧</h2>
+       <h2>登録ユーザー情報一覧</h2>
   		<div><a th:href="@{/add}">プロフィール登録はこちら</a></div>
 	  <table class="table table-striped">
 		<thead>
@@ -35,7 +35,7 @@
 		</thead>
 		<tbody>
 		  <tr th:each="user : ${userlist}" th:object="${user}">
-		    <td th:text="*{id}"></td>
+		    <td th:text="*{userId}"></td>
 		    <td th:text="*{name}"></td>
 		    <td th:text="*{team}"></td>
 		    <td th:text="*{position}"></td>
@@ -46,7 +46,7 @@
 			  <form th:action="@{/adddelete}" method="post">
 			    <!-- 会員情報削除ボタン -->
 			    <input type="submit" class="btn btn-outline-danger" name="delete" value="削除">
-			    <input type="hidden" name="id" th:value="${user.id}">
+			    <input type="hidden" name="userId" th:value="${user.userId}">
 			  </form>
 			</td>
 		  </tr>
