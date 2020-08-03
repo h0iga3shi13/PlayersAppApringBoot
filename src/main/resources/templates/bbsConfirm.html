@@ -22,10 +22,6 @@
 	<div class="container">
 	  <h1>確認用ページ</h1>
 		  <div>
-		    <label for="name">ユーザー名</label><br />
-		    <p th:text="*{name}">name</p>
-		  </div>
-		  <div>
 		    <label for="team">チーム名</label><br />
 		    <p th:text="*{team}">team</p>
 		  </div>
@@ -68,7 +64,6 @@
 
 		</div>
 		<div>
-	        <input type="hidden" name="name" th:value="*{name}" />
 	        <input type="hidden" name="team" th:value="*{team}" />
 	        <input type="hidden" name="event" th:value="*{#temporals.format(event, 'yyyy/MM/dd')}" />
 	        <input type="hidden" name="deadline" th:value="*{#temporals.format(deadline, 'yyyy/MM/dd')}" />
