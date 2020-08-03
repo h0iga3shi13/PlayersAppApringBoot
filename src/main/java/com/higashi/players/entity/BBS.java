@@ -4,9 +4,13 @@ import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.Data;
@@ -24,14 +28,8 @@ public class BBS {
 	 */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id")
-	private Long id;
-
-	/*
-	 * 募集者
-	 */
-	@Column(name = "name")
-	private String name;
+	@Column(name = "BBS_ID")
+	private Long bbsId;
 
 	/*
 	 * チームid (ユーザー登録時に紐付ける)
@@ -100,4 +98,9 @@ public class BBS {
 	@Column(name = "created_date")
 	private LocalDateTime created;
 
+	@OneToOne(fetch = FetchType.LAZY)
+	@JoinTable(name = "BBS_USER", joinColumns = {
+			@JoinColumn(name = "BBS_ID", referencedColumnName = "BBS_ID") }, inverseJoinColumns = {
+					@JoinColumn(name = "USER_ID", referencedColumnName = "USER_ID") })
+	private UserTable userTable;
 }
