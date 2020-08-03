@@ -8,7 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.higashi.players.entity.BBS;
+import com.higashi.players.dto.BBSRecord;
 import com.higashi.players.service.BBSService;
 
 @Controller
@@ -23,7 +23,7 @@ public class CommonController {
 	 */
 	@RequestMapping(value = "/bbs", method = RequestMethod.GET)
 	public String list(Model model) {
-		List<BBS> bbslist = bbsService.searchAll();
+		List<BBSRecord> bbslist = bbsService.searchAll();
 		model.addAttribute("bbslist", bbslist);
 		return "bbs";
 	}
