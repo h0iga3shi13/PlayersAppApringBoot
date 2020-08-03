@@ -4,9 +4,9 @@ import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.MapsId;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.Data;
@@ -24,9 +24,9 @@ public class Add {
 	 * add ID
 	 */
 	@Id
-	@Column(name = "id")
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	//	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "USER_ID")
+	private Long userId;
 
 	/*
 	 * 名前
@@ -63,5 +63,9 @@ public class Add {
 	 */
 	@Column(name = "delete_date")
 	private LocalDateTime deleteDate;
+
+	@OneToOne
+	@MapsId
+	private UserTable userTable;
 
 }
