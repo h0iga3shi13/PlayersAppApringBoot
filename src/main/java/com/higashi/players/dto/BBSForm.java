@@ -21,10 +21,6 @@ import lombok.Data;
 @Data
 public class BBSForm implements Serializable {
 
-	@NotBlank(message = "ユーザー名を入力してください")
-	@Size(max = 64)
-	private String name;
-
 	@NotBlank(message = "チーム名を入力してください")
 	@Size(max = 64)
 	private String team;

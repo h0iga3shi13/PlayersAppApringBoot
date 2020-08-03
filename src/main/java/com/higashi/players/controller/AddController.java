@@ -72,7 +72,6 @@ public class AddController {
 	 * param = "formで付与した name属性のdelete"
 	 * @return 遷移先
 	 */
-
 	@RequestMapping(value = "/adddelete", method = RequestMethod.POST)
 	public String delete(Long id) {
 		addService.delete(id);
