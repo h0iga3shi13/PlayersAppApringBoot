@@ -1,12 +1,18 @@
 package com.higashi.players.entity;
 
 import java.util.Collection;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 
@@ -23,7 +29,7 @@ public class UserTable implements UserDetails {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "USER_ID")
-	private Integer userId;
+	private Long userId;
 
 	@Column(name = "Email")
 	@NotEmpty
@@ -32,6 +38,15 @@ public class UserTable implements UserDetails {
 	@Column(name = "PASSWORD")
 	@NotEmpty
 	private String password;
+
+	@OneToMany
+	@JoinTable(name = "BBS_USER", joinColumns = {
+			@JoinColumn(name = "USER_ID", referencedColumnName = "USER_ID") }, inverseJoinColumns = {
+					@JoinColumn(name = "BBS_ID", referencedColumnName = "BBS_ID", unique = true) })
+	private List<BBS> bbsList;
+
+	@OneToOne(mappedBy = "userTable", cascade = CascadeType.ALL)
+	private Add add;
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
