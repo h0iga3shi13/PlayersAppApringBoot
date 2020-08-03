@@ -11,12 +11,17 @@ import org.springframework.stereotype.Service;
 import com.higashi.players.dto.AddForm;
 import com.higashi.players.entity.Add;
 import com.higashi.players.repository.AddRepository;
+import com.higashi.players.repository.UserTableRepository;
+import com.higashi.players.util.LoginState;
 
 @Service
 @Transactional(rollbackOn = Exception.class)
 public class AddService {
 	@Autowired
 	AddRepository addRepository;
+
+	@Autowired
+	UserTableRepository userTableRepository;
 
 	/*
 	 * 会員登録情報 全検索
@@ -50,10 +55,11 @@ public class AddService {
 	private Add createAdd(AddForm addRequest) {
 
 		Add add = new Add();
+
+		add.setUserTable(userTableRepository.findByEmail(LoginState.loginEmail()));
 		add.setName(addRequest.getName());
 		add.setTeam(addRequest.getTeam());
 		add.setPosition(addRequest.getPosition());
-
 		add.setCreateDate(LocalDateTime.now());
 		add.setUpdateDate(LocalDateTime.now());
 
