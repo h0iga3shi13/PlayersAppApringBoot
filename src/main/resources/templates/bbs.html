@@ -19,7 +19,7 @@
   <div th:replace="common :: header_fragment"></div>
    	<div class="container">
 	  <h1>BBS</h1>
-	    <a th:href="@{/bbs/form}">入力フォームへ</a>
+	    <a th:href="@{/bbs/form}">入力フォームはこちら</a>
 	      <table class="table table-striped">
 		    <thead>
 			  <tr>
@@ -38,17 +38,17 @@
 		</thead>
 		<tbody>
 		  <tr th:each="bbs : ${bbslist}" th:object="${bbs}">
-		    <td th:text="*{name}"></td>
-		    <td th:text="*{team}"></td>
-		    <td th:text="*{#temporals.format(event, 'yyyy/MM/dd')}"></td>
-			<td th:text="*{#temporals.format(deadline, 'yyyy/MM/dd')}"></td>
-			<td th:text="*{area}"></td>
-			<td th:text="*{venue}"></td>
-			<td th:text="*{cost}"></td>
-			<td th:text="*{capacity}"></td>
-			<td th:text="*{level}"></td>
-			<td th:text="*{type}"></td>
-			<td th:text="*{text}"></td>
+		    <td th:text="*{userName}"></td>
+		    <td th:text="*{bbs.team}"></td>
+		    <td th:text="*{#temporals.format(bbs.event, 'yyyy/MM/dd')}"></td>
+			<td th:text="*{#temporals.format(bbs.deadline, 'yyyy/MM/dd')}"></td>
+			<td th:text="*{bbs.area}"></td>
+			<td th:text="*{bbs.venue}"></td>
+			<td th:text="*{bbs.cost}"></td>
+			<td th:text="*{bbs.capacity}"></td>
+			<td th:text="*{bbs.level}"></td>
+			<td th:text="*{bbs.type}"></td>
+			<td th:text="*{bbs.text}"></td>
 		  </tr>
 		  </tbody>
 		  </table>
