@@ -32,7 +32,7 @@
 		<tbody>
 			<tr th:each="bbs : ${bbslist}" th:object="${bbs}">
 				<td th:text="*{text}"></td>
-				<td th:text="*{name}"></td>
+				<td th:text="*{bbsId}"></td>
 				<td th:text="*{#temporals.format(event, 'yyyy/MM/dd')}"></td>
 				<td th:text="*{area}"></td>
 				<td th:text="*{type}"></td>
