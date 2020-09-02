@@ -24,16 +24,16 @@
 
 	      <!-- email -->
     	  <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
+            <label for="exampleInputEmail1">メールアドレス</label>
             <div class="col-sm-10">
-            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" th:field="*{email}">
+            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email address" th:field="*{email}">
             <p th:errors="*{email}" class="error-message"></p>
 	        </div>
           </div>
 
 		  <!-- password -->
           <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
+            <label for="exampleInputPassword1">パスワード</label>
             <div class="col-sm-10">
               <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" th:field="*{password}" name="password"/>
             <p th:errors="*{password}" class="error-message"></p>
